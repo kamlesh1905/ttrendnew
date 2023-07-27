@@ -4,11 +4,13 @@ pipeline {
                 label 'maven-agent'
             }
     }
-
+	environment {
+    PATH = "/opt/apache-maven-3.9.3/bin:$PATH"
+}
     stages {
-        stage('Clone code') {
+        stage('build') {
             steps {
-               git branch: 'main', url: 'https://github.com/kamlesh1905/ttrendnew.git'
+               sh 'mvn clean deploy'
             }
         }
     }
