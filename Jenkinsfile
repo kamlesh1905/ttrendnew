@@ -16,6 +16,7 @@ pipeline {
             }
         }
 		
+
 		 stage("test"){
             steps{
                 echo "----------- unit test started  ----------"
@@ -24,7 +25,6 @@ pipeline {
             }
         }
 
-		
 		stage('SonarQube analysis') {
         environment {
          scannerHome = tool 'SonarScannner'
