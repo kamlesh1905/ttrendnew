@@ -16,8 +16,7 @@ pipeline {
             }
         }
 		
-
-		 stage("test"){
+     stage("test"){
             steps{
                 echo "----------- unit test started  ----------"
                 sh 'mvn surefire-report:report'
@@ -25,7 +24,7 @@ pipeline {
             }
         }
 
-		stage('SonarQube analysis') {
+    stage('SonarQube analysis') {
         environment {
          scannerHome = tool 'SonarScannner'
         }
